@@ -4,9 +4,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const taskController = require('./controllers/TaskController');
-const instructorRoutes = require("./controllers/instructors")
-const coursesRoutes = require("./controllers/courses")
-const participantsRoutes = require("./controllers/participants")
+const instructorRoutes = require("./controllers/Instructors")
+const coursesRoutes = require("./controllers/Courses")
+const participantsRoutes = require("./controllers/Participants")
 
 // db instance connection
 require('./config/db');
