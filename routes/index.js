@@ -12,7 +12,7 @@ const router = express.Router()
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
-router.get("/ping", (req, res) => {
+router.get("/", (req, res) => {
     const ready = {
         status: "server is ready"
     }
