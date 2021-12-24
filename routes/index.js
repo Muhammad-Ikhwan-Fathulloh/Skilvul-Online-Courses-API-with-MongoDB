@@ -1,10 +1,5 @@
 const express = require("express")
 const bodyParser = require('body-parser');
-const userRoutes = require("./users")
-const user_groupRoutes = require("./user_groups")
-const instructorRoutes = require("./instructors")
-const coursesRoutes = require("./courses")
-const participantsRoutes = require("./participants")
 const author = "Muhammad Ikhwan Fathulloh"
 // creates a new router instance.
 const router = express.Router()
@@ -20,10 +15,40 @@ router.get("/", (req, res) => {
     res.status(200).send(ready)
 })
 
-router.use("/users", userRoutes)
-router.use("/user-groups", user_groupRoutes)
-router.use("/instructors", instructorRoutes)
-router.use("/courses", coursesRoutes)
-router.use("/participants", participantsRoutes)
+// API Instructor Endpoints
+router
+  .route('/instructors')
+  .get(Instructors.listAllInstructor)
+  .post(Instructors.createNewInstructor);
+
+router
+  .route('/instructors/:instructorid')
+  .get(Instructors.readInstructor)
+  .put(Instructors.updateInstructor)
+  .delete(Instructors.deleteInstructor);
+
+// API Courses Endpoints
+router
+  .route('/courses')
+  .get(Courses.listAllCourses)
+  .post(Courses.createNewCourses);
+
+router
+  .route('/courses/:coursesid')
+  .get(Courses.readCourses)
+  .put(Courses.updateCourses)
+  .delete(Courses.deleteCourses);
+
+// API Participant Endpoints
+router
+  .route('/participants')
+  .get(Participants.listAllParticipant)
+  .post(Participants.createNewParticipant);
+
+router
+  .route('/participants/:participantid')
+  .get(Participants.readParticipant)
+  .put(Participants.updateParticipant)
+  .delete(Participants.deleteParticipant);
 
 module.exports = router
