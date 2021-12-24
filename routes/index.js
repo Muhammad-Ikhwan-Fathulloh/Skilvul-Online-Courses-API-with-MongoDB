@@ -5,7 +5,7 @@ const user_groupRoutes = require("./user_groups")
 const instructorRoutes = require("./instructors")
 const coursesRoutes = require("./courses")
 const participantsRoutes = require("./participants")
-
+const author = "Muhammad Ikhwan Fathulloh"
 // creates a new router instance.
 const router = express.Router()
 
@@ -14,7 +14,7 @@ router.use(bodyParser.json());
 
 router.get("/", (req, res) => {
     const ready = {
-        status: "server is ready"
+        status: `server is ready, ${author}`
     }
 
     res.status(200).send(ready)
