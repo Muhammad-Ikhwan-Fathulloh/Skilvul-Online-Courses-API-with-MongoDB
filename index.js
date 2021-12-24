@@ -28,36 +28,36 @@ app.get("/", (req, res) => {
 })
 
 // API Instructor Endpoints
-router
+app
   .route('/instructors')
   .get(Instructors.listAllInstructor)
   .post(Instructors.createNewInstructor);
 
-router
+app
   .route('/instructors/:instructorid')
   .get(Instructors.readInstructor)
   .put(Instructors.updateInstructor)
   .delete(Instructors.deleteInstructor);
 
 // API Courses Endpoints
-router
+app
   .route('/courses')
   .get(Courses.listAllCourses)
   .post(Courses.createNewCourses);
 
-router
+app
   .route('/courses/:coursesid')
   .get(Courses.readCourses)
   .put(Courses.updateCourses)
   .delete(Courses.deleteCourses);
 
 // API Participant Endpoints
-router
+app
   .route('/participants')
   .get(Participants.listAllParticipant)
   .post(Participants.createNewParticipant);
 
-router
+app
   .route('/participants/:participantid')
   .get(Participants.readParticipant)
   .put(Participants.updateParticipant)
