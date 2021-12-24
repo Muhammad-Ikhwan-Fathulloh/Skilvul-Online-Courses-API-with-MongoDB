@@ -45,7 +45,7 @@ class CoursesAPI {
             Courses : Courses
           }
       });
-    }).populate("instructors");
+    }).populate("instructor");
   };
 
   // Tambah data dengan validasi
@@ -102,7 +102,7 @@ class CoursesAPI {
             Courses : Courses
           }
       });
-    }).populate("instructors");
+    }).populate("instructor");
   };
 
   // Ubah data berdasarkan id
