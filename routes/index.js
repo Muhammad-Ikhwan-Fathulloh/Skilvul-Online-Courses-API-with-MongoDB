@@ -1,5 +1,8 @@
 const express = require("express")
 const bodyParser = require('body-parser');
+const instructorRoutes = require("./instructors")
+const coursesRoutes = require("./courses")
+const participantsRoutes = require("./participants")
 const author = "Muhammad Ikhwan Fathulloh"
 // creates a new router instance.
 const router = express.Router()
